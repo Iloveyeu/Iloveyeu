@@ -125,4 +125,44 @@ body {
 }
 
 #prev-btn { bottom: 2vh; left: 15%;}  /* stick to left edge */
+
 #next-btn { bottom: 2vh; right: 15%;} /* stick to right edge */
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .book {
+    width: 95vw;
+    height: 70vh;
+  }
+
+  #prev-btn, #next-btn {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 40%;
+    font-size: 1rem;
+  }
+
+  /* Stack navigation buttons under the book */
+  #prev-btn {
+    margin-top: 1rem;
+    margin-right: 5%;
+  }
+  #next-btn {
+    margin-top: 1rem;
+    margin-left: 5%;
+  }
+  
+  /* Ensure text inside pages scrolls nicely */
+  .front-content, .back-content {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+    overflow-y: auto;
+  }
+}
